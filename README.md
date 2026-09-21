@@ -4,339 +4,437 @@
 
 ## Concept
 
-This project explores a true volumetric display based on very small water droplets suspended or spatially organized in air.
+This project proposes a true volumetric display based on very small water
+droplets suspended and spatially organized in air.
 
-Instead of projecting an image onto a fog screen, the goal is to create individually addressable luminous points inside a transparent three-dimensional volume.
+Unlike a conventional fog screen, the goal is not to project a two-dimensional
+image onto a visible cloud. Instead, individual positions inside a transparent
+three-dimensional working volume would act as addressable luminous voxels.
 
 The proposed system combines:
 
-- an aerosol of microscopic water droplets;
-- acoustic fields that organize or concentrate droplets into predictable spatial regions;
-- optical excitation directed toward selected droplet positions;
-- rapid scanning of these positions to construct a moving three-dimensional image.
+- a continuously replenished microdroplet aerosol;
+- acoustic fields for organizing droplets into predictable spatial regions;
+- optical excitation of selected droplet positions;
+- programmable laser addressing;
+- rapid temporal updating to form moving three-dimensional images.
 
-The long-term goal is a display capable of reproducing a real three-dimensional object or person in open space rather than on a flat or curved projection surface.
+The long-term objective is to reproduce real three-dimensional objects or
+people in open space, including real-time volumetric telepresence.
 
 
 ## Acoustic Droplet Matrix
 
-Ultrasonic transducers would create a standing or dynamically controlled acoustic field inside the working volume.
+Ultrasonic transducers surrounding the working volume create standing or
+dynamically controlled acoustic fields.
 
-The droplets do not necessarily need to remain permanently fixed as individual particles.
+The droplets do not necessarily need to remain permanently fixed as individual
+particles. Instead, the acoustic field can create repeatable regions in which
+droplets are preferentially concentrated.
 
-Instead, the acoustic field may produce repeatable regions of increased droplet concentration or preferred droplet positions.
+These regions form a physical three-dimensional coordinate system.
 
-These regions form a physical three-dimensional coordinate system that can be calibrated relative to the optical addressing system.
+The display controller can therefore know where suitable droplet targets are
+likely to exist and address those coordinates optically.
 
-The acoustic wavelength and field geometry determine the possible spacing between these regions.
+If the aerosol is disturbed — for example by a hand moving through the working
+volume — continuous aerosol replenishment and the acoustic field could restore
+the droplet distribution.
 
-A hand or other object passing through the display could temporarily disturb the droplet distribution and therefore disturb the image.
-
-After the object is removed, continued aerosol supply and the acoustic field could restore the working droplet distribution.
+The project therefore investigates a statistically stable and self-replenishing
+3D droplet structure rather than requiring every individual droplet to remain
+permanently trapped.
 
 
 ## Transparent Working Volume
 
-The intention is not to create a visibly dense fog.
+The droplet concentration should be low enough that the inactive working volume
+remains as transparent as possible.
 
-The concentration of droplets should be low enough that the unilluminated working volume remains nearly transparent and does not significantly obscure objects behind the display.
-
-This produces an engineering tradeoff between:
+This creates an important engineering trade-off between:
 
 - droplet diameter;
 - droplet concentration;
 - optical scattering;
-- evaporation time;
+- evaporation rate;
 - acoustic localization;
 - probability of finding a droplet at an addressable position;
-- voxel brightness.
+- brightness of an activated voxel.
 
-The optimal droplet size has not yet been determined.
+The optimal droplet size and concentration remain experimental questions.
 
-Droplets from the micrometer to tens-of-micrometers range should be investigated experimentally rather than assuming that the smallest possible droplet is necessarily optimal.
+The intended result is:
 
-
-## Aerosol Generation
-
-The water microdroplets could be generated using ultrasonic atomization, vibrating-mesh atomization, or another controlled aerosol-generation method.
-
-A continuous supply of droplets could replenish the working volume.
-
-The system therefore does not necessarily depend on permanently preserving individual droplets.
-
-Droplets may enter, move through, evaporate, be displaced, or be consumed by optical excitation while the overall spatial distribution is continuously restored.
+nearly transparent medium  
+→ weakly visible or invisible optical paths  
+→ bright selected points in space  
+→ rapidly changing 3D image
 
 
-## Droplets as Optical Elements
+## Microdroplets as Optical Elements
 
-A microscopic spherical water droplet is not only a target for the optical system.
+A nearly spherical water microdroplet can interact with light as more than a
+passive scattering particle.
 
-Surface tension naturally causes sufficiently small free water droplets to approach a spherical shape.
+Depending on its size and optical conditions, a droplet may behave as a
+microscopic lens or optical resonator.
 
-Because of their geometry and refractive index, spherical microdroplets can behave as microscopic lenses and optical resonators.
+Previous experiments have demonstrated optical focusing effects,
+whispering-gallery resonances, nonlinear optical effects, and localized
+laser-induced plasma in water microdroplets.
 
-Previous experiments have demonstrated optical focusing, resonant optical behavior, whispering-gallery modes, nonlinear optical effects, and highly localized laser-induced plasma inside water microdroplets.
+This project investigates whether these properties can help concentrate optical
+energy inside or near a droplet and thereby reduce the external energy required
+to create a visible voxel.
 
-The project therefore investigates whether the droplet itself can help concentrate optical energy inside a very small region and improve the localization of a luminous voxel.
 
+## Single-Beam Voxel Excitation
 
-## Optical Voxel Generation
+The simplest experimental architecture uses one focused ultrashort laser beam.
 
-One experimentally established candidate mechanism is laser-induced optical breakdown inside a water microdroplet.
+A selected acoustic droplet position is targeted and the optical energy is
+focused into the droplet.
 
-A sufficiently intense, tightly focused ultrashort laser pulse can produce a very small plasma region inside the droplet.
+One candidate voxel-generation mechanism is laser-induced optical breakdown or
+microplasma.
 
-The resulting optical event could potentially serve as a visible volumetric voxel.
+This architecture is useful as an initial experimental proof of concept because
+it separates the acoustic positioning problem from more complicated optical
+beam-combination systems.
 
-For a display, the desired sequence would be:
-
-**known 3D droplet region → optical targeting → short luminous event → next coordinate**
-
-Rapid repetition across many coordinates could create the perception of a persistent three-dimensional image.
-
-A single strongly focused ultrashort laser is the simplest experimentally supported starting point.
-
-However, this project also proposes investigating a multi-beam architecture.
+However, sequentially moving one beam between every voxel may ultimately limit
+the achievable number of voxels and frame rate.
 
 
 ## Multi-Beam Excitation
 
-Instead of delivering all required optical energy through one beam, the proposed architecture investigates distributing the excitation between multiple optical channels positioned around the display volume.
+A second architecture distributes the optical excitation between multiple
+beams positioned around the working volume.
 
-These channels would be synchronized spatially and temporally so that they converge on a selected microdroplet.
+The beams are synchronized spatially and temporally so that they converge at a
+selected droplet.
 
-The desired operating condition is:
+The desired operating principle is:
 
-**individual optical channel → below the voxel-generation threshold**
+individual optical channel  
+→ insufficient to generate the intended voxel effect
 
-**multiple synchronized channels at one droplet → bright optical voxel**
+multiple synchronized channels at one droplet  
+→ sufficient combined or nonlinear excitation  
+→ visible voxel
 
-The purpose is to concentrate the strongest optical interaction at a selected coordinate rather than along an individual optical path.
+This could potentially improve spatial selectivity and reduce the energy carried
+by any individual optical path.
 
-Several configurations could be investigated:
+However, splitting optical energy does not by itself guarantee either a lower
+total energy requirement or eye safety.
 
-- multiple beams of the same wavelength;
-- multiple beams of different wavelengths;
-- temporally synchronized pulses;
-- nonlinear multi-photon excitation;
-- resonantly enhanced interaction inside the droplet;
-- combinations of optical channels that produce an effect only when they overlap spatially and temporally.
+The exact interaction may depend on whether the channels use:
 
-Whether a sufficiently efficient nonlinear interaction can be achieved in a water microdroplet under these conditions remains an open experimental question.
+- the same wavelength;
+- different wavelengths;
+- coherent or incoherent beams;
+- nonlinear optical excitation;
+- resonant enhancement inside the droplet.
 
-
-## Beam Splitting as a Possible Safety Mechanism
-
-One possible implementation is to begin with a single optical source and split its pulse into several lower-energy optical paths.
-
-The separated beams would travel through different paths around the display volume and would be recombined spatially and temporally only at the selected microdroplet.
-
-The purpose of this architecture is not only voxel addressing.
-
-It could potentially improve safety by reducing the optical energy carried by any individual path.
-
-An unintended object intersecting only one optical path would therefore receive only a fraction of the total optical energy involved in voxel excitation.
-
-A particularly interesting target condition would be:
-
-**each separated beam individually remains below the required interaction threshold, while their combined or nonlinear interaction at the selected droplet produces the luminous voxel.**
-
-Different wavelengths could also be separated into independent channels and recombined at the droplet if a suitable nonlinear optical process can be identified.
-
-The spherical droplet itself may potentially contribute additional field localization through refraction, focusing, or resonant behavior.
-
-This architecture does **not** automatically make the individual beams eye-safe.
-
-A practical implementation would have to demonstrate that every individual optical path remains within applicable exposure limits under normal operation and foreseeable failure conditions.
+These mechanisms must be investigated experimentally rather than assumed to be
+equivalent.
 
 
-## Spatial Optical Architecture
+## Parallel Laser Projection and Voxel Addressing
 
-The optical modules could be positioned around the perimeter of the display rather than directly behind the image.
+Sequentially steering a single laser through every voxel is not the only
+possible display architecture.
 
-Multiple optical paths could approach the working volume from different directions.
+A programmable laser projection system could instead generate multiple optical
+focal points simultaneously.
 
-The system would then calculate the required beam directions and timing for a selected voxel coordinate.
+The acoustic system already provides a known three-dimensional set of possible
+droplet coordinates. The optical system could therefore receive the active
+voxel coordinates of a 3D frame and generate a corresponding pattern of focal
+points.
 
-The intended relationship is:
+Possible approaches include:
 
-**3D coordinate → acoustic droplet position → optical steering → pulse synchronization → luminous voxel**
+- spatial light modulators;
+- holographic beam shaping;
+- programmable diffractive optics;
+- other optical systems capable of generating multiple controlled focal points.
 
-Unused optical energy should not be allowed to continue freely into the surrounding environment.
+The proposed processing chain is:
 
-Any practical implementation would require controlled beam termination, optical containment, monitoring, and automatic interruption when a person or unexpected object enters an unsafe optical path.
+3D model  
+→ active voxel coordinates  
+→ acoustic droplet coordinates  
+→ programmable optical pattern  
+→ simultaneous excitation of selected droplets  
+→ next optical pattern / frame
+
+Instead of producing thousands of voxels one after another, the system could
+potentially address groups of voxels, spatial layers, or multiple separated
+points during the same optical cycle.
 
 
-## Charged Droplets
+## Hybrid Parallel / Sequential Addressing
 
-Electrical charging of droplets is another possible research direction.
+A practical architecture may combine parallel projection with rapid scanning.
 
-Electrical fields are not necessarily required to generate the droplets or to create the basic acoustic matrix.
+For example:
 
-However, charged droplets could potentially allow additional control over droplet motion, distribution, aggregation, or interaction with the optical field.
+laser source  
+→ programmable optical projection  
+→ group of selected voxels  
+→ rapid pattern update  
+→ next group of voxels
 
-Nonlinear optical effects in charged water microdroplets have previously been experimentally observed.
+This reduces the number of individual beam movements without requiring the
+entire three-dimensional image to be generated in a single optical pulse.
 
-A future system could therefore investigate a hybrid architecture combining:
+The number of simultaneous voxels would depend on the available optical energy,
+projection efficiency, required voxel brightness, and repetition rate.
 
-**ultrasonic positioning + charged droplets + optical excitation**
 
-This remains an optional research branch rather than a required component of the basic concept.
+## Energy Limitation
+
+Parallel projection does not create additional optical energy.
+
+If one voxel requires an optical energy E_v and N voxels are excited
+simultaneously, the source must provide sufficient total energy for all active
+voxel sites, including optical losses.
+
+The architecture therefore involves a trade-off between:
+
+- simultaneous voxel count;
+- energy per voxel;
+- total pulse energy;
+- optical efficiency;
+- voxel brightness;
+- update rate;
+- frame rate.
+
+The optimal balance between parallel and sequential addressing remains an
+experimental question.
+
+
+## 3D Addressing
+
+A conventional scanning system must control X, Y, and focal depth Z.
+
+The acoustic architecture potentially simplifies this problem because the
+possible droplet positions form a known set of discrete three-dimensional
+coordinates.
+
+Rather than continuously searching for arbitrary points in space, the optical
+system can be calibrated against this coordinate map.
+
+The display controller can therefore treat the acoustic volume as a physical
+3D voxel grid.
+
+Possible addressing methods include:
+
+- X/Y optical scanning with variable focal depth;
+- fast optical deflection;
+- programmable holographic addressing;
+- simultaneous multi-focus projection;
+- combinations of these methods.
+
+
+## Voxel Generation Mechanisms
+
+Several possible mechanisms should be investigated independently:
+
+1. Laser-induced optical breakdown or microplasma in a water droplet.
+2. Nonlinear optical excitation involving multiple synchronized beams.
+3. Resonant optical-field enhancement inside a spherical droplet.
+4. Raman or other nonlinear optical emission.
+5. Optical effects involving electrically charged droplets.
+
+These mechanisms are not assumed to be equivalent or simultaneously necessary.
+
+The first experimental objective is to determine which mechanism provides the
+best combination of brightness, repeatability, energy efficiency, and droplet
+survival.
+
+
+## Droplet Replacement and Self-Recovery
+
+Some high-intensity optical processes may deform, evaporate, or destroy an
+activated droplet.
+
+The system therefore does not necessarily depend on repeatedly using the same
+physical particle.
+
+A continuous aerosol source can replenish the working volume while the acoustic
+field reconstructs the statistical droplet distribution.
+
+The display medium could therefore operate as a continuously renewed optical
+material rather than as a permanently fixed particle array.
 
 
 ## Color
 
-Color generation remains an open part of the project.
+Color generation remains an open research problem.
 
 Possible approaches include:
 
 - separate optical wavelengths;
-- RGB optical channels;
-- nonlinear wavelength conversion;
-- wavelength-dependent excitation;
-- nonlinear optical emission from the droplet;
-- another light-emitting mechanism associated with the droplet or generated plasma.
+- wavelength-selective excitation;
+- nonlinear optical conversion;
+- controlled scattering;
+- other light-emitting mechanisms.
 
-Different combinations of optical channels could potentially correspond to different emitted colors.
+A plasma voxel is not assumed to reproduce the colors of the excitation beams
+directly.
 
-However, a plasma voxel should not automatically be assumed to reproduce the colors of the incoming laser beams.
-
-The relationship between excitation wavelength and perceived voxel color must be experimentally determined.
-
-
-## Interaction
-
-Because the display medium consists of physical droplets suspended in open space, the image could potentially be physically disturbed.
-
-For example, a hand passing through the working volume could displace droplets and temporarily destroy part of the displayed image.
-
-After the hand is removed, aerosol replenishment and the acoustic field could reconstruct the droplet distribution and therefore restore the image.
-
-This behavior would distinguish the system from a conventional projection or purely optical holographic display.
+RGB or full-color operation must therefore be demonstrated independently.
 
 
 ## Proposed System Architecture
 
-A possible future device could contain:
+A possible complete system consists of:
 
-- a water reservoir;
-- an ultrasonic or vibrating-mesh aerosol generator;
-- controlled airflow for replenishing the working volume;
-- ultrasonic transducer arrays surrounding the display region;
-- sensors for monitoring the acoustic and droplet distribution;
-- optical sources positioned around the perimeter;
-- beam splitting and steering optics;
-- focusing optics;
-- timing and synchronization electronics;
-- optical monitoring and safety interlocks;
-- a real-time 3D rendering and voxel-addressing system.
+1. Microdroplet aerosol generator.
+2. Controlled airflow and replenishment system.
+3. Ultrasonic transducer arrays surrounding the working volume.
+4. Acoustic-field control electronics.
+5. One or more ultrashort-pulse laser sources.
+6. Programmable optical steering or projection system.
+7. Calibration system connecting acoustic coordinates to optical coordinates.
+8. Real-time 3D rendering and voxel-selection controller.
 
-The display controller would convert a three-dimensional model or live 3D capture into a sequence of voxel coordinates.
+The control pipeline is:
 
-Each coordinate would then be synchronized with the acoustic droplet structure and optical excitation system.
-
-
-## Example Application: Volumetric Telepresence
-
-One possible application is real-time volumetric telepresence.
-
-A person could be captured in three dimensions at one location.
-
-The resulting continuously updated 3D data could be transmitted to another location.
-
-The microdroplet display would reconstruct the person's visible surface as rapidly changing luminous voxels occupying real three-dimensional space.
-
-Unlike a conventional video call, the remote representation would not be confined to a flat screen.
-
-Unlike a conventional fog screen, the intended image would not exist only on a two-dimensional sheet of aerosol.
-
-The goal is a genuinely volumetric representation that can be observed from different directions.
+3D scene  
+→ visible surface / active voxel selection  
+→ acoustic coordinate map  
+→ optical addressing pattern  
+→ synchronized excitation  
+→ emitted voxel light  
+→ next pattern
 
 
-## Research Basis
+## Volumetric Telepresence
 
-Individual physical elements related to this concept have already been demonstrated independently.
+One intended application is real-time volumetric communication.
 
-These include:
+A depth camera or other 3D capture system could acquire the geometry and
+appearance of a person.
 
-- ultrasonic generation of microscopic water droplets;
-- acoustic manipulation and concentration of particles and droplets;
-- acoustic levitation of water droplets;
-- optical focusing by spherical microdroplets;
-- whispering-gallery resonances in liquid microdroplets;
-- nonlinear optical effects in water microdroplets;
-- laser-induced optical breakdown and localized plasma formation inside water microdroplets.
+The captured data would be converted into active voxel coordinates and sent to
+the display.
 
-These established effects provide physical starting points for the proposed architecture.
+Instead of viewing the remote person on a flat screen, the observer would see a
+physical three-dimensional luminous representation occupying real space.
 
-They do **not** demonstrate that the complete display described here will operate as proposed.
+The same architecture could potentially display:
 
-
-## Open Research Questions
-
-The main unresolved questions include:
-
-- optimal water-droplet diameter;
-- minimum practical droplet diameter for stable acoustic manipulation;
-- achievable acoustic 3D spacing;
-- stability of a large acoustic droplet matrix;
-- droplet concentration required for reliable voxel generation;
-- transparency of the complete working volume;
-- optical scattering along beam paths;
-- evaporation time;
-- aerosol replenishment rate;
-- recovery after physical disturbance;
-- optical energy required for one visible voxel;
-- achievable voxel brightness;
-- voxel lifetime;
-- maximum voxel repetition rate;
-- effectiveness of single-beam excitation;
-- effectiveness of multi-beam excitation;
-- whether beam splitting can substantially reduce individual beam exposure;
-- whether nonlinear interaction can make the combined excitation substantially more efficient than simple intensity addition;
-- usefulness of the droplet as a microlens or optical resonator;
-- usefulness of electrically charged droplets;
-- practical RGB/color generation;
-- maximum useful display volume;
-- acoustic noise;
-- optical safety;
-- interaction between neighboring voxels;
-- long-term stability and contamination of the aerosol system.
+- human faces and bodies;
+- scientific data;
+- CAD models;
+- medical imagery;
+- spatial interfaces;
+- animated three-dimensional objects.
 
 
 ## Safety
 
-The optical mechanisms considered in this project may involve ultrashort laser pulses with very high peak intensity.
+The multi-beam and parallel-projection architectures are partly motivated by
+the possibility of distributing optical energy between multiple paths.
 
-Short pulse duration does not by itself make such radiation safe.
+However, this does not demonstrate that any individual beam is eye-safe.
 
-The eye can strongly focus visible and near-infrared laser radiation onto the retina.
+A practical system would require independent evaluation of:
 
-The proposed multi-beam and beam-splitting architectures are therefore research directions for potentially reducing the energy present in each individual optical path, not proof of eye safety.
+- wavelength;
+- pulse duration;
+- pulse energy;
+- repetition rate;
+- direct exposure;
+- reflections;
+- optical failure modes;
+- maximum permissible exposure.
 
-Any practical device intended for use near people would require a dedicated safety architecture, including evaluation of individual beam exposure, reflections, failure conditions, beam termination, interlocks, object detection, and applicable laser exposure limits.
+High-intensity laser operation should therefore be treated as a separate safety
+engineering problem.
 
 
-## Current Status
+## Experimental Development Path
 
-**Research concept / experimental architecture — September 2026.**
+The concept can be tested progressively.
 
-The project currently combines experimentally established physical effects with several unverified system-level hypotheses.
+### Stage 1 — Acoustic positioning
 
-In particular, the following should be treated as research questions rather than established capabilities:
+Demonstrate stable acoustic trapping or concentration of water droplets without
+high-power optical excitation.
 
-- formation of a sufficiently transparent and stable large 3D microdroplet matrix;
-- reliable high-speed addressing of individual droplet regions;
-- multi-beam threshold excitation of water microdroplets;
-- useful optical enhancement produced by the droplet itself;
-- controllable full-color voxel generation;
-- operation at a repetition rate sufficient for a moving volumetric image;
-- reduction of individual beam exposure to a level compatible with human-accessible operation.
+### Stage 2 — Single voxel
 
-The purpose of this repository is to document the concept and its development before detailed physical, engineering, prior-art, and experimental validation.
+Address one known droplet position optically and demonstrate a repeatable visible
+effect.
 
-A later technical review should separate each component into:
+### Stage 3 — Multiple acoustic positions
 
-**experimentally established / physically plausible / unverified / impractical**
+Create and calibrate several known droplet coordinates.
 
-and update the architecture accordingly.
+### Stage 4 — Sequential optical addressing
+
+Switch rapidly between different droplet coordinates.
+
+### Stage 5 — Parallel projection
+
+Generate multiple optical focal points corresponding to multiple acoustic
+coordinates.
+
+### Stage 6 — Dynamic voxel patterns
+
+Display simple moving three-dimensional point patterns.
+
+### Stage 7 — Volumetric image
+
+Increase voxel count, update rate, brightness, and working volume sufficiently
+to display recognizable 3D objects.
+
+### Stage 8 — Telepresence
+
+Connect real-time 3D capture to the volumetric display.
+
+
+## Main Experimental Questions
+
+The project must determine:
+
+- What droplet diameter provides the best optical and acoustic behavior?
+- How accurately can droplets be localized acoustically?
+- What 3D spacing between stable acoustic regions is achievable?
+- How transparent can the inactive aerosol volume remain?
+- What droplet concentration is required?
+- How quickly do droplets evaporate?
+- How rapidly can disturbed regions recover?
+- What optical energy is required for a visible voxel?
+- Can a droplet survive repeated excitation?
+- How many voxels can be addressed simultaneously?
+- How rapidly can programmable optical patterns be changed?
+- Can multiple weak optical channels produce a useful nonlinear voxel effect?
+- What is the maximum practical frame rate?
+- How can full-color voxels be generated?
+- What is the maximum useful display volume?
+- Can every optical path satisfy the required safety limits?
+
+
+## Status
+
+**Research concept / experimental architecture.**
+
+Individual physical effects relevant to the concept have experimental precedent,
+including acoustic manipulation of droplets, optical resonances in water
+microdroplets, nonlinear optical interactions, and femtosecond
+laser-induced breakdown in individual water droplets.
+
+The complete architecture proposed here — an acoustically structured,
+self-replenishing, nearly transparent microdroplet volume combined with
+programmable sequential and/or parallel optical voxel addressing — has not yet
+been experimentally demonstrated by this project.
+
+The immediate objective is therefore not to assume that the complete display
+works, but to experimentally test each subsystem and determine whether they can
+be combined into a practical volumetric display.
